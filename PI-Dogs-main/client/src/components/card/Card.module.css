@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    border: 0.2rem solid rgba( 210, 210, 210, 0.9);
+    background-color: rgba( 60, 60, 60, 0.2);
+    border-radius: 8px;
+    transition: 900ms;
+}
+
+.card:hover {
+    border: 0.2rem solid rgba(60, 60, 60, 1);
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1080px;
+    flex-wrap: wrap;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    margin: 2px;
+}
+
+.temper {
+    display: inline-block;
+    margin: 0 auto;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.image {
+    object-fit: cover;
+    height: 250px;
+    border-radius: 8px;
+}
