@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getDogs, paginacion } from "../../actions";
 import Card from "../../components/card/Card";
 import Pagination from "../../components/pagination/Pagination";
+import SearchByName from '../../components/searchbar/SearchBar'
 
 export default function Home() {
 
@@ -21,6 +22,7 @@ export default function Home() {
 
     return (
         <>
+            <SearchByName />
             <Pagination />
             <Card />
         </>

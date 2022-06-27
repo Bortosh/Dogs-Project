@@ -11,6 +11,7 @@
 
 .card:hover {
     border: 0.2rem solid rgba(60, 60, 60, 1);
+    cursor: pointer;
 }
 
 .cardWrapper {

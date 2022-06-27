@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;    
+}
+
+.link {
+    text-decoration: none;
+    padding: 5px;
+    background-color: black;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: white;
+    transition: 500ms;
+}
+
+.link:hover {
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}

@@ -5,7 +5,7 @@ export default function Footer() {
 
     return(
         <div>
-            <h1>this is the Footer</h1>
+            <h1>Rogx-dev 2022 / Dog App</h1>
         </div>
     )
 }

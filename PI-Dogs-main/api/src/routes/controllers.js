@@ -50,7 +50,8 @@ const createDogs = async (req, res) => {
                 weight,
                 height,
                 life_span,
-                image
+                image,
+                temperament
             })
             const temperInDb = await Temper.findAll({
                 where: {
@@ -63,9 +64,5 @@ const createDogs = async (req, res) => {
         console.log(error)
     }
 }
-
-
-
-
 
 module.exports = {createDogs, getDog, getDogById}
