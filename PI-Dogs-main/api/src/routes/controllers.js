@@ -45,6 +45,11 @@ const createDogs = async (req, res) => {
     try {
         let {name, weight, height, life_span, temperament, image} = req.body
 
+        if(typeof name=='number') return res.status(400).send("The name can't be a number");
+
+        if(!name || !weight || !height || !life_span || !temperament) {
+            return res.status(404).send('Missing Data')
+        }else {
         let dogCreated = await Dog.create({
                 name,
                 weight,
@@ -59,6 +64,7 @@ const createDogs = async (req, res) => {
             }})
             await dogCreated.addTemper(temperInDb)
             return res.status(201).send(dogCreated)
+        }
     } catch (error) {
         res.status(500).send(error)
         console.log(error)

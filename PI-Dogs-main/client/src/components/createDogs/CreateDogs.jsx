@@ -24,11 +24,22 @@ export default function CreateDogs() {
     });
 
     const [errors, setErrors] = useState({});
-    // const [disable, setDisable] = useState(true);
+    // console.log("🚀 ~ file: CreateDogs.jsx ~ line 27 ~ CreateDogs ~ errors", errors)
+    const [disable, setDisable] = useState(true);
+
+    // console.log('rogelio', Object.values(errors).length)
 
     useEffect(() => {
         dispatch(getTemper());
     }, [dispatch])
+
+    useEffect(() => {
+        if(Object.values(errors).length === 0) {
+            setDisable(false)
+        }else {
+            setDisable(true)
+        }
+    },[errors])
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -41,9 +52,8 @@ export default function CreateDogs() {
             temperament: input.temperament.join(', '),
         };
 
-        if(!create.name || !create.height || !create.weight || !create.life_span || !create.temperament) {
-            // setDisable(disable)
-            alert('aun falta informacion')
+        if(!create.name || !create.height || !create.weight || !create.life_span || !create.temperament || !create.image) {
+            alert('aun falta informacion 😭')
         }else {
             dispatch(postDogs(create));
             setInput({
@@ -60,7 +70,6 @@ export default function CreateDogs() {
         });
         alert('Success!!, Now be responsible! 😊')
         navigate('/home')
-        // setDisable(!disable)
     }
 }
 
@@ -176,15 +185,16 @@ export default function CreateDogs() {
                     </label>
                     <br/><strong>{errors.maxlife_span}</strong>
 
-                    {/* <label>
+                    <label>
                         <em>Image:</em>
                     </label>
                         <input 
                         type='text'
-                        value={input.image}
                         placeholder='URL'
+                        name="image"
+                        value={input.image}
                         onChange={(e) => handleChange(e)}
-                        /> */}
+                        />
 
                     <label>Temperament:{' '}</label>
                     <select onChange={(e) => handleSelectTemper(e)}>
@@ -211,7 +221,7 @@ export default function CreateDogs() {
                         })
                     }
                     <button
-                        // disabled={disable}
+                        disabled={disable}
                         type="submit"
                         onClick={(e) => handleSubmit(e)}
                     > 

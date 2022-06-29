@@ -7,6 +7,9 @@ export const ONE_DOG = 'ONE_DOG'
 export const CLEAN_DOG = 'CLEAN_DOG'
 export const SEARCH_BY_NAME = 'SEARCH_BY_NAME'
 export const FILTER_TEMPER = 'FILTER_TEMPER'
+export const SORT_NAME = 'SORT_NAME'
+export const SORT_WEIGHT = 'SORT_WEIGHT'
+export const FILTER_EXISTING_DOG = 'FILTER_EXISTING_DOG'
 
 export function getDogs() {
     return async function(dispatch) {
@@ -84,6 +87,27 @@ export function postDogs(payload) {
 export function cleanDog() {
     return {
         type: CLEAN_DOG
+    }
+}
+
+export function sortName(payload) {
+    return {
+        type: SORT_NAME,
+        payload
+    }
+}
+
+export function sortWeight(payload) {
+    return {
+        type: SORT_WEIGHT,
+        payload
+    }
+}
+
+export function filterExistingDog(payload) {
+    return {
+        type: FILTER_EXISTING_DOG,
+        payload
     }
 }
 

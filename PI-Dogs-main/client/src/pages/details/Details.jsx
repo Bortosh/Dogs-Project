@@ -12,13 +12,11 @@ export default function Details() {
     
     useEffect(() => {
         dispatch(getOneDog(id))
-        // return () => {
-        //     dispatch(cleanDog())
-        // }
+        return dispatch(cleanDog())
     }, [dispatch, id])
     
     const dog = useSelector((state) => state.dog)
-    console.log("🚀 ~ file: Details.jsx ~ line 20 ~ Details ~ dog", dog)
+    // console.log("🚀 ~ file: Details.jsx ~ line 20 ~ Details ~ dog", dog)
     const {name, image, temperament, weight, height, life_span } = dog;
     
     return(

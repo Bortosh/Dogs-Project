@@ -8,6 +8,8 @@ const getDogs = async () => {
     let perritos = []
     let dogs = await axios(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
     let data = dogs.data
+    // let largo = data.length
+    // console.log("🚀 ~ file: api.js ~ line 11 ~ getDogs ~ data", largo)
     const result = data.map(({id, name, weight, height, life_span, temperament, image}) => {
         perritos.push({
             id: id,
