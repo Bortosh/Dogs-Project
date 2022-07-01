@@ -6,18 +6,19 @@
 
 .paginado {
     background-color: rgb(82, 70, 70);
-    padding: 1rem;
+    padding: 1.2rem;
 }
 
 .btn {
-    padding: .5rem;
-    border-radius: 2rem;
-    transition: 500ms;
+    padding: 10px 16px;
+    transition: .4s;
+    border: none;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
 }
 
 .btn:hover {
     cursor: pointer;
     color: white;
     background-color: rgb(82, 70, 70);
-    /* border-color: rgb(82, 70, 70); */
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
 }

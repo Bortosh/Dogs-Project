@@ -18,7 +18,7 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(getDogs())
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(paginacion(pages))
