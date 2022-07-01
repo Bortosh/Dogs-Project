@@ -14,7 +14,7 @@ export default function OrderByName() {
 
     return (
     <div>
-        <select className="botonfiltro" onChange={e=> handleOrdenar(e)}>
+        <select onChange={e=> handleOrdenar(e)}>
             <option value='All'>Alphabetically</option>
             <option value='asc'> A a Z  </option>
             <option value='desc'> Z a A  </option>

@@ -51,18 +51,22 @@ function rootReducer(state = initialState, action) {
             case SEARCH_BY_NAME:
                 return {
                     ...state,
-                    dogsToRender: action.payload
+                    dogs: action.payload
                 };
             case FILTER_TEMPER:
-                const alldogs = state.dogs;
+                const alldogs = state.allDogs;
                 const filterTemper = action.payload === 'All' ? alldogs : alldogs.filter(item => {
-                    if(item.temper) {
-                        if(item.temper.includes(action.payload)) {
+                    if(item.temperament) {
+                        // console.log({
+                        //     temperament: item.temperament,
+                        //     value: item.temperament.includes(action.payload) 
+                        // })
+                        if(item.temperament.includes(action.payload)) {
                             return item
                         }
                     }
-                return false;
                 })
+                // console.log('esto es filtrado de temper', action.payload)
                 return {
                     ...state,
                     dogs: filterTemper
@@ -85,61 +89,56 @@ function rootReducer(state = initialState, action) {
                     }
                 }
             case SORT_NAME:
-                if(action.paylaod === 'asc') {
+                if(action.payload === 'asc') {
+                    const data = [...state.dogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1))
+                    // console.log('action sort name', data, state.dogs)
                     return {
                         ...state,
-                        dogs: [...state.dogs].sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1))
+                        dogs: data
                     }
-                } return{
+                } 
+                const data = [...state.dogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? -1 : 1))
+                // console.log('action sort name', data, state.dogs)
+                return{
                     ...state,
-                    dogs: [...state.dogs].sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)),
-                    }
+                    dogs: data,
+                }
             case SORT_WEIGHT:
                 if( action.payload === 'All'){
                     return {
                         ...state,
-                        allDogs: [...state.allDogs],
-                        dogs: [...state.dogs],
+                        dogs: [...state.allDogs],
                     }
                 }
                 if( action.payload === 'small'){
-                    return{
+                    const data = [...state.dogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+                        if(pesoA > pesoB) return 1;
+                        if(pesoA < pesoB) return -1;
+                        else return 0;
+                    })
+                    // console.log('esto es small', data)
+                    return {
                         ...state,
-                        allDogs: [...state.allDogs].sort((a, b) =>{
-                            let pesoA= parseInt(a.weight.split('-')[0]);
-                            let pesoB= parseInt(b.weight.split('-')[0]);
-                            if(pesoA > pesoB) return 1;
-                            if(pesoA < pesoB) return -1;
-                            else return 0;   
-                        }),
-                        dogs: [...state.dogs].sort((a, b) =>{
-                            let pesoA= parseInt(a.weight.split('-')[0]);
-                            let pesoB= parseInt(b.weight.split('-')[0]);
-                            if(pesoA > pesoB) return 1;
-                            if(pesoA < pesoB) return -1;
-                            else return 0;
-                        })
+                        dogs: data
                     }
                 }
                 if( action.payload === 'big'){
+                    const data = [...state.dogs].sort((a, b) =>{
+                        let pesoA= parseInt(a.weight.split('-')[0]);
+                        let pesoB= parseInt(b.weight.split('-')[0]);
+                        if(pesoA > pesoB) return -1;
+                        if(pesoA < pesoB) return 1;
+                        else return 0;   
+                    })
+                    // console.log('esto es big', data)
                     return {
-                        allDogs: [...state.allDogs].sort((a, b) =>{
-                            let pesoA= parseInt(a.weight.split('-')[0]);
-                            let pesoB= parseInt(b.weight.split('-')[0]);
-                            if(pesoA < pesoB) return 1;
-                            if(pesoA > pesoB) return -1;
-                            else return 0;   
-                        }),
-                        dogs: [...state.dogs].sort((a, b) =>{
-                            let pesoA= parseInt(a.weight.split('-')[0]);
-                            let pesoB= parseInt(b.weight.split('-')[0]);
-                            if(pesoA < pesoB) return 1;
-                            if(pesoA > pesoB) return -1;
-                            else return 0;   
-                        })
+                        ...state,
+                        dogs: data
                     }
-                    };
-                    break;
+                }
+    break;
 
         default: return state;
     }

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Card() {
 
     const dogsToRender = useSelector((state) => state.dogsToRender)
-    console.log("🚀 ~ file: Card.jsx ~ line 9 ~ Card ~ dogsToRender", dogsToRender)
+    // console.log("🚀 ~ file: Card.jsx ~ line 9 ~ Card ~ dogsToRender", dogsToRender)
 
     return (
         <div className={style.cardWrapper}>
