@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landingPage/LandingPage';
@@ -7,7 +8,6 @@ import NavBar from './pages/navBar/NavBar';
 import Details from './pages/details/Details';
 import CreateDogs from './components/createDogs/CreateDogs';
 import NotFound from './pages/NotFound/NotFound';
-import NotDogs from './pages/NotFound/NotDogs';
 
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
           <Route exact path = '/details/:id' element={<Details />} />
           <Route exact path = '/createdogs' element={<CreateDogs />} />
           <Route exact path = '*' element={<NotFound />} />
-          <Route exact path = '/nodogs' element={<NotDogs />} />
         </Routes>
       <Footer />
     </>

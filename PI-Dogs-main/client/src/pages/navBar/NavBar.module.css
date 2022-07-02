@@ -11,12 +11,10 @@
     border: 2px solid black;
     color: white;
     transition: 900ms;
-    clip-path: polygon(90% 1%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
 }
 
 .link:hover {
     border: 2px solid white;
     background-color: white;
     color: black;
-    clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
 }

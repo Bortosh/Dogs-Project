@@ -8,7 +8,8 @@ import {
     FILTER_TEMPER, 
     FILTER_EXISTING_DOG, 
     SORT_NAME,
-    SORT_WEIGHT} from "../actions";
+    SORT_WEIGHT,
+    DELETE_DOG} from "../actions";
 
 const initialState = {
     dogsPerPage: 8,
@@ -72,6 +73,10 @@ function rootReducer(state = initialState, action) {
                     ...state,
                     dogs: filterTemper
                 }
+            case DELETE_DOG:
+                return {
+                    ...state
+                }
             case FILTER_EXISTING_DOG:
                 if(action.payload === 'todos'){
                     return {
@@ -95,6 +100,7 @@ function rootReducer(state = initialState, action) {
                         dogs: data2
                     }
                 }
+            break;
             case SORT_NAME:
                 if(action.payload === 'asc') {
                     const data = [...state.allDogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1))

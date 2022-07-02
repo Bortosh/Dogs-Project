@@ -10,6 +10,7 @@ export const FILTER_TEMPER = 'FILTER_TEMPER'
 export const SORT_NAME = 'SORT_NAME'
 export const SORT_WEIGHT = 'SORT_WEIGHT'
 export const FILTER_EXISTING_DOG = 'FILTER_EXISTING_DOG'
+export const DELETE_DOG = 'DELETE_DOG'
 
 export function getDogs() {
     return async function(dispatch) {
@@ -111,6 +112,15 @@ export function filterExistingDog(payload) {
     }
 }
 
+export function deleteDog(payload) {
+    return async (dispatch) => {
+        const data = await axios.delete('http://localhost:3001/dogs/'+ payload);
+        console.log("🚀 ~ file: index.js ~ line 118 ~ return ~ data", data)
+        return dispatch ({
+            type: DELETE_DOG
+        })
+    }
+}
 
 
 

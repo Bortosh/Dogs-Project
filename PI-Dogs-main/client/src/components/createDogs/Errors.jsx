@@ -1,7 +1,7 @@
 export function validation(input){
-    let errors ={};
+    let errors = {};
 
-    if(input.name.length === 0){
+    if(input.name.length === 0 || input.name.trim().length === 0){
         errors.name ="enter the name please";
     }else if(input.name.search(/^[a-zA-Z\s]*$/) ){
         errors.name = 'No numbers or symbols are allowed in the name '

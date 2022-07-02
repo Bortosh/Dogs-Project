@@ -7,8 +7,8 @@ export default function NavBar() {
 
     return (
         <div className={style.navbar}>
-            <Link to='/home' className={style.link}>Home</Link>
             <Link to='/' className={style.link}>Landing Page</Link>
+            <Link to='/home' className={style.link}>Home</Link>
             <Link to='/createdogs' className={style.link}>crear perrito</Link>
         </div>
     )

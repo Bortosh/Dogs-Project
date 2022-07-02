@@ -1,6 +1,7 @@
 body {
   display: flex;
   justify-content: center;
+  background-color: rgb(252, 215, 185);
   font-family: -apple-system,'Poppins', sans-serif, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
