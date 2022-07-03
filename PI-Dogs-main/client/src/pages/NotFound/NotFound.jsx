@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import style from './NotFound.module.css'
 
-const NotFound = () => {
+export default function NotFound () {
 
     return (
         <div className={style.container}>
@@ -14,4 +14,4 @@ const NotFound = () => {
     )
 }
 
-export default NotFound;
+// export default NotFound;
