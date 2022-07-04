@@ -45,14 +45,18 @@ export default function Details() {
                     ? (<div className={style.loader}>Loading...</div>)
                     : (
                         <div>
-                            <button disabled={disable} onClick={()=>handleDelete(id)}>Delete Dog</button>
                             <h1>Details</h1>
                             <h3>Nombre: {name}</h3>
                             <h3>Temperamentos: {temperament}</h3>
                             <h3>Peso: {weight}</h3>
                             <h3>Altura: {height}</h3>
                             <h3>Promedio de vida: {life_span}</h3>
-                            <img className={style.image} src={image} alt={name} />
+                            <div className={style.box}>
+                                <img className={style.image} src={image} alt={name} />
+                            </div>
+                            <div>
+                                <button disabled={disable} onClick={()=>handleDelete(id)}>Delete Dog</button>
+                            </div>
                         </div>
                         )
             }

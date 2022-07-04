@@ -71,4 +71,44 @@ const createDogs = async (req, res) => {
     }
 }
 
-module.exports = {createDogs, getDog, getDogById}
+// extras
+
+const deleteDog = async (req, res) => {
+    const {id} = req.params;
+    const dogToDelete = await Dog.findByPk(id)
+    if(dogToDelete) {
+        await dogToDelete.destroy();
+        return res.send('Dog deleted');
+    }else {
+        return res.status(404).send('No existe ese Dog en la base de datos')
+    }
+}
+
+const putDog = async (req, res) => {
+    try {
+        const {id} = req.params;
+    let {name, weight, height, life_span, temperament, image} = req.body;
+    if(!id || id.length < 5) {
+        return res.send('El id no es valido')
+    }else {
+        const updateDog = await Dog.findByPk(id);
+        if(updateDog){
+            await updateDog.update({
+                name,
+                weight,
+                height,
+                life_span,
+                temperament,
+                image
+            })
+            return res.send(updateDog)
+        }else {
+            res.send('no se pudo encontrar el Dog con el id')
+        }
+    }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = {createDogs, getDog, getDogById, deleteDog, putDog}

@@ -3,7 +3,7 @@
     width: 800px;
     height: 600px;
     /* background: #FCD7B9; */
-    margin: 90px auto;
+    margin: 0 auto;
 }
 
 .cabezota {
@@ -19,7 +19,7 @@
 
 .todo {
     position: absolute;
-    margin: 30px 90px;
+    margin: 0 90px;
 }
 
 .cabeza {

@@ -10,6 +10,8 @@ const {getDog} = require ('./controllers')
 const {createDogs} = require('./controllers')
 const {getDogById} = require('./controllers')
 const {getTemperament} = require('./api')
+const {deleteDog} = require('./controllers')
+const {putDog} = require('./controllers')
 
 
 
@@ -18,6 +20,8 @@ router.get('/temperaments', getTemperament)
 router.get('/dogs', getDog)
 router.get('/dogs/:id', getDogById)
 router.post('/dogs', createDogs)
+router.delete('/dogs/:id', deleteDog)
+router.put('/dogs/:id', putDog)
 
 
 
