@@ -15,7 +15,8 @@ export default function Details() {
     const [disable, setDisable] = useState(true)
     
     const dog = useSelector((state) => state.dog)
-    const {name, image, temperament, weight, height, life_span, createInDb } = dog;
+    // console.log("🚀 ~ file: Details.jsx ~ line 18 ~ Details ~ dog", dog)
+    const {name, image, temperament, weight, height, life_span, createInDb} = dog;
     
     useEffect(() => {
         dispatch(getOneDog(id))
@@ -48,8 +49,8 @@ export default function Details() {
                             <h1>Details</h1>
                             <h3>Nombre: {name}</h3>
                             <h3>Temperamentos: {temperament}</h3>
-                            <h3>Peso: {weight}</h3>
-                            <h3>Altura: {height}</h3>
+                            <h3>Peso: {weight} Kg</h3>
+                            <h3>Altura: {height} Imperials</h3>
                             <h3>Promedio de vida: {life_span}</h3>
                             <div className={style.box}>
                                 <img className={style.image} src={image} alt={name} />

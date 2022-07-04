@@ -1,12 +1,12 @@
+.paginado {
+    background-color: #162052;
+    padding: 1.2rem;
+}
+
 .number {
     display: inline;
     align-items: center;
-    margin: 2rem;
-}
-
-.paginado {
-    background-color: rgb(82, 70, 70);
-    padding: 1.2rem;
+    margin: 0.3rem;
 }
 
 .btn {
