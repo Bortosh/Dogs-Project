@@ -56,17 +56,13 @@ export function searchByName(name) {
     return async (dispatch) => {
         try {
             const res = await axios('http://localhost:3001/dogs?name='+name)
-            const data = res.data
-            if(data) {
+            const data = await res.data
                 return dispatch({
                     type: SEARCH_BY_NAME,
                     payload: data
                 })
-            }else {
-                console.log('dog not found')
-            }
         } catch (error) {
-            console.log(error)
+            alert('Dog Not Found')
         }
     }
 }

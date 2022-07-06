@@ -41,7 +41,7 @@
     filter: blur(1px);
 }
 
-.shadow
+/* .shadow
 {
     position: absolute;
     top: 0;
@@ -52,9 +52,9 @@
     transform-origin: top;
     transform: skew(45deg);
     pointer-events: none;
-}
+} */
 
-.shadow::before
+/* .shadow::before
 {
     content: '';
     position: absolute;
@@ -62,7 +62,7 @@
     height: 50px;
     background: #162052;
     z-index: 1;
-}
+} */
 
 .searchBox input
 {

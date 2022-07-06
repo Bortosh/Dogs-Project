@@ -1,14 +1,3 @@
-.paginado {
-    background-color: #162052;
-    padding: 1.2rem;
-}
-
-.number {
-    display: inline;
-    align-items: center;
-    margin: 0.3rem;
-}
-
 .btn 
 {
     position: relative;
@@ -18,6 +7,7 @@
     padding: 10px 16px;
     transition: 0.5s;
     border: none;
+    letter-spacing: 3px;
 }
 
 .btn:hover
@@ -35,7 +25,7 @@
     background: #162052;
 }
 
-.btn .span8
+.btn .span
 {
     position: relative;
     z-index: 1;
@@ -53,7 +43,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 40px;
+    left: 120px;
     width: 10px;
     height: 4px;
     background: #162052;
@@ -72,7 +62,7 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 20px;
+    left: 10px;
     width: 10px;
     height: 4px;
     background: #162052;
@@ -84,4 +74,12 @@
 {
     width: 10px;
     left: 80%;
+}
+
+/* FORMULARIO */
+
+.form
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }

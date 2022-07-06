@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { sortWeight } from "../../actions";
+import style from './OrderByBreeds.module.css'
 
 export default function OrderByWeight() {
 
@@ -14,9 +15,9 @@ export default function OrderByWeight() {
 
     return (
     <div>
-        <select className="botonfiltro" onChange={e=> handleOrdenarWeitgh(e)}>
+        <select onChange={e=> handleOrdenarWeitgh(e)} className={style.select}>
             <option value='All'>By Weight</option>
-            <option value='small'> Light  </option>
+            <option value='light'> Light  </option>
             <option value='big'> Weight  </option>
         </select> 
     </div> 

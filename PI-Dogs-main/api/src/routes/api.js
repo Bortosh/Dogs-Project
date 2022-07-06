@@ -12,8 +12,8 @@ const getDogs = async () => {
         perritos.push({
             id: id,
             name: name,
-            weight: weight.imperial,
-            height: height.imperial,
+            weight: weight.metric,
+            height: height.metric,
             life_span: life_span,
             temperament: temperament,
             image: image.url

@@ -29,7 +29,7 @@ const getDog = async (req, res) => {
         let allDogs = await getAllDogs()
         if (name) {
             let dogName = allDogs.filter(item => item.name.toLowerCase().includes(name.toLowerCase()))
-            dogName
+            dogName.length
                 ? res.status(200).send(dogName)
                 : res.status(404).send('Dog Not Found')
         } else {

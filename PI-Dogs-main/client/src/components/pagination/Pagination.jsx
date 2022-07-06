@@ -23,7 +23,7 @@ export default function Pagination() {
                 { pageNumber && 
                 pageNumber.map(number => (
                     <li key={number} className={styles.number}>
-                        <button className={styles.btn} onClick={() => dispatch(paginacion((number - 1 ) * 8))}>{number}</button>
+                        <button className={styles.btn} onClick={() => dispatch(paginacion((number - 1 ) * 8))}><span className={styles.span8}>{number}</span><i></i></button>
                     </li>
                 ))}
             </ul>

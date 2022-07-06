@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { sortName } from "../../actions";
+import style from './OrderByBreeds.module.css'
 
 export default function OrderByName() {
 
@@ -14,7 +15,7 @@ export default function OrderByName() {
 
     return (
     <div>
-        <select onChange={e=> handleOrdenar(e)}>
+        <select onChange={e=> handleOrdenar(e)} className={style.select}>
             <option >Alphabetically</option>
             <option value='asc'> A a Z  </option>
             <option value='desc'> Z a A  </option>

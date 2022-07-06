@@ -15,7 +15,6 @@ export default function Details() {
     const [disable, setDisable] = useState(true)
     
     const dog = useSelector((state) => state.dog)
-    // console.log("🚀 ~ file: Details.jsx ~ line 18 ~ Details ~ dog", dog)
     const {name, image, temperament, weight, height, life_span, createInDb} = dog;
     
     useEffect(() => {
@@ -46,17 +45,17 @@ export default function Details() {
                     ? (<div className={style.loader}>Loading...</div>)
                     : (
                         <div>
-                            <h1>Details</h1>
-                            <h3>Nombre: {name}</h3>
-                            <h3>Temperamentos: {temperament}</h3>
-                            <h3>Peso: {weight} Kg</h3>
-                            <h3>Altura: {height} Imperials</h3>
-                            <h3>Promedio de vida: {life_span}</h3>
+                            <h1 className={style.detalle}>Details</h1>
+                            <h3>Name: {name}</h3>
+                            <h3>Tempers: {temperament}</h3>
+                            <h3>Height: {height} Cm</h3>
+                            <h3>Weight: {weight} Kg</h3>
+                            <h3>Life span: {life_span}</h3>
                             <div className={style.box}>
                                 <img className={style.image} src={image} alt={name} />
                             </div>
-                            <div>
-                                <button disabled={disable} onClick={()=>handleDelete(id)}>Delete Dog</button>
+                            <div className={style.divDelete}>
+                                <span className={style.a}><button className={style.btn} disabled={disable} onClick={()=>handleDelete(id)}><span className={style.span6}></span><text className={style.text}>Delete</text></button></span>
                             </div>
                         </div>
                         )

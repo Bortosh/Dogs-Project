@@ -123,7 +123,7 @@ function rootReducer(state = initialState, action) {
                         dogs: [...state.allDogs],
                     }
                 }
-                if( action.payload === 'small'){
+                if( action.payload === 'light'){
                     const data = [...state.allDogs].sort((a, b) =>{
                         let pesoA= parseInt(a.weight.split('-')[0]);
                         let pesoB= parseInt(b.weight.split('-')[0]);

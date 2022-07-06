@@ -8,6 +8,7 @@ import OrderByTemper from "../../components/filters/OrderByTemper";
 import OrderByWeight from "../../components/filters/OrderByWeight";
 import Pagination from "../../components/pagination/Pagination";
 import SearchByName from '../../components/searchbar/SearchBar'
+import style from './Home.module.css'
 
 export default function Home() {
 
@@ -25,14 +26,16 @@ export default function Home() {
     }, [dispatch, dogs, pages])
 
     return (
-        <>
+        <div>
+            <div className={style.home}>
             <OrderByTemper/>
             <OrderByBreeds />
             <OrderByName />
             <OrderByWeight />
             <SearchByName />
+            </div>
             <Pagination />
             <Card />
-        </>
+        </div>
     )
 }

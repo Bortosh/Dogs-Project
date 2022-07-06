@@ -9,6 +9,7 @@ const SearchBar = () => {
     const [name, setName] = useState('')
 
     function handleInputChange(e){
+        e.preventDefault()
         setName(e.target.value)
     }
 
@@ -22,7 +23,7 @@ const SearchBar = () => {
     return (
         <form>
             <div className={style.searchBox}>
-                <div className={style.shadow    }></div>
+                <div className={style.shadow}></div>
                 <input
                     type='text'
                     value={name}

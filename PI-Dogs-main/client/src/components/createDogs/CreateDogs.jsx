@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTemper, postDogs } from "../../actions";
 import { validation } from './Errors';
 import { useNavigate } from 'react-router-dom'
+import style from './CreateDogs.module.css'
 
 export default function CreateDogs() {
     
@@ -107,7 +108,7 @@ export default function CreateDogs() {
         <div>
             <h1>Create Dog</h1>
             <div>
-                <form>
+                <form className={style.form}>
                     <label>
                         <em>Name:</em>
                         <input
@@ -220,14 +221,17 @@ export default function CreateDogs() {
                             )
                         })
                     }
-                    <button
-                        disabled={disable}
-                        type="submit"
-                        onClick={(e) => handleSubmit(e)}
-                    > 
-                    Lets Go!
-                    </button>
                 </form>
+                        <button
+                            disabled={disable}
+                            type="submit"
+                            onClick={(e) => handleSubmit(e)}
+                            className={style.btn}
+                            ><span className={style.span}>
+                                Lets Go!
+                            </span>
+                            <i></i>
+                        </button>
             </div>
         </div>
     )
