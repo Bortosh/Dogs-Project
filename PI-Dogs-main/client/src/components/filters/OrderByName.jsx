@@ -16,7 +16,7 @@ export default function OrderByName() {
     return (
     <div>
         <select onChange={e=> handleOrdenar(e)} className={style.select}>
-            <option >Alphabetically</option>
+            <option value='All'>Alphabetically</option>
             <option value='asc'> A a Z  </option>
             <option value='desc'> Z a A  </option>
         </select> 

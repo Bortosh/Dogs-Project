@@ -7,6 +7,7 @@ import OrderByName from "../../components/filters/OrderByName";
 import OrderByTemper from "../../components/filters/OrderByTemper";
 import OrderByWeight from "../../components/filters/OrderByWeight";
 import Pagination from "../../components/pagination/Pagination";
+import Refresh from "../../components/Refresh/Refresh";
 import SearchByName from '../../components/searchbar/SearchBar'
 import style from './Home.module.css'
 
@@ -32,6 +33,7 @@ export default function Home() {
             <OrderByBreeds />
             <OrderByName />
             <OrderByWeight />
+            <Refresh />
             <SearchByName />
             </div>
             <Pagination />

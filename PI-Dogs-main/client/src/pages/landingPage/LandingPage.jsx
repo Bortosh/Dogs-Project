@@ -6,7 +6,9 @@ export default function LandingPage() {
     return(
         <div className={style.container}>
             <div>
-                <h1 className={style.title}>Epic Dogs</h1>
+                <h2 className={style.h2}>
+                    <span className={style.span}>Neon Dogs</span>
+                </h2>
                 <Doggy />
             </div>
         </div>

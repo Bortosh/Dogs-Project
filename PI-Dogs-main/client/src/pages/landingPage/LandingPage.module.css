@@ -1,35 +1,50 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} */
-
-.title {
+.h2 {
     display: flex;
     justify-content: center;
-    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-}
-
-.btn {
-    position: relative;
-    padding: 15px 40px;
-    background: #d5db94;
-    cursor: pointer;
-    color: #555;
-    text-decoration: none;
+    -webkit-box-reflect: below -7px linear-gradient(transparent, #0004);
+    color: transparent;
+    font-size: 10vh;
+    margin: 0px;
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.2em;
-    letter-spacing: 2px;
-    transition: 0.8s;
-    clip-path: polygon(90% 1%, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
-    border: none;
 }
 
-.btn:hover {
-    background: #a7b612;
-    color: #fff;
-    letter-spacing: 4px;
-    clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
+.h2 .span
+{
+    animation: animate 3s linear infinite;
+    animation-delay: 0.1s;
 }
+
+@keyframes animate
+{
+    0%
+    {
+        color: #fff;
+        filter: blur(2px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff,
+        0 0 300px #00b3ff,
+        0 0 400px #00b3ff;
+    }
+    30%, 70%
+    {
+        color: #fff;
+        filter: blur(2px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #00b3ff,
+        0 0 20px #00b3ff,
+        0 0 40px #00b3ff,
+        0 0 80px #00b3ff,
+        0 0 120px #00b3ff,
+        0 0 200px #00b3ff;
+    }
+    100%
+    {
+        color: transparent;
+        box-shadow: none;
+        filter: blur(2px) hue-rotate(0deg);
+    }
+}
+

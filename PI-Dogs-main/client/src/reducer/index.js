@@ -78,15 +78,19 @@ function rootReducer(state = initialState, action) {
                     ...state
                 }
             case FILTER_EXISTING_DOG:
-                if(action.payload === 'todos'){
+                if(action.payload === 'All'){
                     return {
                         ...state,
                         dogs: [...state.allDogs]
                     }
                 }else if(action.payload === 'db'){
-                    const data1 = state.allDogs.filter((perro) => perro.createInDb === true)
+                    const data1 = [...state.allDogs].filter((perro) => perro.createInDb === true)
                     if(data1.length === 0) {
                         alert('no hay perritos en la base de datos 😭🐶')
+                        return {
+                            ...state,
+                            dogs: [...state.allDogs]
+                        }
                     }else {
                         return {
                             ...state,
@@ -94,14 +98,19 @@ function rootReducer(state = initialState, action) {
                         }
                     }
                 }else{
-                    const data2 = state.allDogs.filter((perro) => perro.createInDb === undefined)
+                    const data2 = [...state.allDogs].filter((perro) => perro.createInDb === undefined)
                     return {
                         ...state,
                         dogs: data2
                     }
                 }
-            break;
             case SORT_NAME:
+                if( action.payload === 'All'){
+                    return {
+                        ...state,
+                        dogs: [...state.allDogs],
+                    }
+                }
                 if(action.payload === 'asc') {
                     const data = [...state.allDogs].sort((a, b) => (a.name.toUpperCase() > b.name.toUpperCase() ? 1 : -1))
                     // console.log('action sort name', data, state.dogs)

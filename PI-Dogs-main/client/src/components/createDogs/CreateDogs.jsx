@@ -106,12 +106,15 @@ export default function CreateDogs() {
 
     return(
         <div>
-            <h1>Create Dog</h1>
+            <h2 className={style.h3}>
+                <span className={style.span10}>Create Dog</span>
+            </h2>
             <div>
                 <form className={style.form}>
                     <label>
                         <em>Name:</em>
                         <input
+                        className={style.input}
                         type='text'
                         placeholder="Dog Breed"
                         name="name"
@@ -123,6 +126,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Height min:</em>
                         <input 
+                        className={style.input}
                         type='number'
                         placeholder="Centimeters"
                         name="minHeight"
@@ -134,6 +138,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Height max:</em>
                         <input 
+                        className={style.input}
                         type="number" 
                         placeholder="Centimeters"
                         name="maxHeight"
@@ -145,6 +150,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Weight min:</em>
                         <input 
+                        className={style.input}
                         type="number" 
                         placeholder="Kilograms"
                         name="minWeight"
@@ -156,6 +162,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Weight max:</em>
                         <input 
+                        className={style.input}
                         type="number" 
                         placeholder='Kilograms'
                         name="maxWeight"
@@ -167,6 +174,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Life span min:</em>
                         <input 
+                        className={style.input}
                         type="number" 
                         placeholder='Years'
                         name="minlife_span"
@@ -178,6 +186,7 @@ export default function CreateDogs() {
                     <label>
                         <em>Life span max:</em>
                         <input 
+                        className={style.input}
                         type='number'
                         placeholder='Years'
                         name="maxlife_span"
@@ -190,6 +199,7 @@ export default function CreateDogs() {
                         <em>Image:</em>
                     </label>
                         <input 
+                        className={style.input}
                         type='text'
                         placeholder='URL'
                         name="image"
@@ -222,16 +232,18 @@ export default function CreateDogs() {
                         })
                     }
                 </form>
-                        <button
-                            disabled={disable}
-                            type="submit"
-                            onClick={(e) => handleSubmit(e)}
-                            className={style.btn}
-                            ><span className={style.span}>
-                                Lets Go!
-                            </span>
-                            <i></i>
-                        </button>
+                <div className={style.divbtn}>
+                    <button
+                        disabled={disable}
+                        type="submit"
+                        onClick={(e) => handleSubmit(e)}
+                        className={style.btn}
+                        ><span className={style.span}>
+                            Create
+                        </span>
+                        <i></i>
+                    </button>
+                </div>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ export default function OrderByBreeds() {
         <div >
         <div>
             <select onChange={e=> handlefilterExistingDog(e)} className={style.select}>
-                <option value="todos">All Existing Breed</option>
+                <option value="All">All Existing Breed</option>
                 <option value="db" >Existing Breed DB</option>
                 <option value="api" >Existing Breed API</option>
             
