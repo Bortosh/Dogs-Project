@@ -18,7 +18,8 @@ const initialState = {
     pages: 0,
     dogsToRender: [],
     dog: [],
-    allDogs: []
+    allDogs: [],
+    dogFiltered: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -58,10 +59,10 @@ function rootReducer(state = initialState, action) {
                 const alldogs = [...state.allDogs];
                 const filterTemper = action.payload === 'All' ? alldogs : alldogs.filter(item => {
                     if(item.temperament) {
-                        console.log({
-                            temperament: item.temperament,
-                            value: item.temperament.includes(action.payload) 
-                        })
+                        // console.log({
+                        //     temperament: item.temperament,
+                        //     value: item.temperament.includes(action.payload) 
+                        // })
                         if(item.temperament.includes(action.payload)) {
                             return item
                         }
@@ -71,7 +72,7 @@ function rootReducer(state = initialState, action) {
                 // console.log('esto es filtrado de temper', action.payload)
                 return {
                     ...state,
-                    dogs: filterTemper
+                    dogFiltered: filterTemper
                 }
             case DELETE_DOG:
                 return {
@@ -86,7 +87,7 @@ function rootReducer(state = initialState, action) {
                 }else if(action.payload === 'db'){
                     const data1 = [...state.allDogs].filter((perro) => perro.createInDb === true)
                     if(data1.length === 0) {
-                        alert('no hay perritos en la base de datos 😭🐶')
+                        alert('No hay perritos en la base de datos 😭🐶')
                         return {
                             ...state,
                             dogs: [...state.allDogs]

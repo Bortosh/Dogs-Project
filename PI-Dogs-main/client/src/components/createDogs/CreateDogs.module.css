@@ -85,6 +85,32 @@
     left: 80%;
 }
 
+.label
+{
+    color:#d400d4;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.select
+{
+    background: #162052;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+}
+
+.strong
+{
+    color: red;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
 /* Titulo */
 .h3 {
     display: flex;

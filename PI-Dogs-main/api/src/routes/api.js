@@ -25,12 +25,6 @@ const getDogs = async () => {
     }
 }
 
-// const dbDogs = async () => {
-//     return await Dog.findAll({
-//         include: Temper
-//     })
-// }
-
 const dbDogs = async () => {
     return await Dog.findAll({
         include:{

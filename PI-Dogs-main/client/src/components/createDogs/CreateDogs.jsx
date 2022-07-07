@@ -121,7 +121,7 @@ export default function CreateDogs() {
                         value={input.name}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.name}</strong>
+                    <strong className={style.strong}>{errors.name}</strong>
 
                     <label>
                         <em>Height min:</em>
@@ -133,7 +133,7 @@ export default function CreateDogs() {
                         value={input.minHeight}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.minHeight}</strong>
+                    <strong className={style.strong}>{errors.minHeight}</strong>
                     
                     <label>
                         <em>Height max:</em>
@@ -145,7 +145,7 @@ export default function CreateDogs() {
                         value={input.maxHeight}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.maxHeight}</strong>
+                    <strong className={style.strong}>{errors.maxHeight}</strong>
                     
                     <label>
                         <em>Weight min:</em>
@@ -157,7 +157,7 @@ export default function CreateDogs() {
                         value={input.minWeight}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.minWeight}</strong>
+                    <strong className={style.strong}>{errors.minWeight}</strong>
 
                     <label>
                         <em>Weight max:</em>
@@ -169,7 +169,7 @@ export default function CreateDogs() {
                         value={input.maxWeight}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.maxWeight}</strong>
+                    <strong className={style.strong}>{errors.maxWeight}</strong>
 
                     <label>
                         <em>Life span min:</em>
@@ -181,7 +181,7 @@ export default function CreateDogs() {
                         value={input.minlife_span}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.minlife_span}</strong>
+                    <strong className={style.strong}>{errors.minlife_span}</strong>
 
                     <label>
                         <em>Life span max:</em>
@@ -193,7 +193,7 @@ export default function CreateDogs() {
                         value={input.maxlife_span}
                         onChange={(e) => handleChange(e)}/>
                     </label>
-                    <br/><strong>{errors.maxlife_span}</strong>
+                    <strong className={style.strong}>{errors.maxlife_span}</strong>
 
                     <label>
                         <em>Image:</em>
@@ -205,11 +205,11 @@ export default function CreateDogs() {
                         name="image"
                         value={input.image}
                         onChange={(e) => handleChange(e)}
-                        />
+                    />
 
-                    <label>Temperament:{' '}</label>
-                    <select onChange={(e) => handleSelectTemper(e)}>
-                        <option>Tempers</option>
+                    <label className={style.label}>Temperament:</label>
+                    <select className={style.select} onChange={(e) => handleSelectTemper(e)}>
+                        <option className={style.option}>Tempers</option>
                         {
                             allTempers && allTempers.map(({id, name}) => (
                                 <option key={id} value={name}>
@@ -217,7 +217,7 @@ export default function CreateDogs() {
                                 </option>
                             ))
                         }
-                    </select><br/>
+                    </select>
                     {
                         input.temperament.map((name, index) => {
                             return (

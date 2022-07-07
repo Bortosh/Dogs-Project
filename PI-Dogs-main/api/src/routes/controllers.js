@@ -4,7 +4,7 @@ const { getAllDogs, dbDogs, getDogs } = require('./api.js')
 
 const getDogById = async (req, res) => {
     try {
-        const id = req.params.id
+        const {id} = req.params
         if (id.length < 5) {
             const dog = await getDogs()
             const idDog = dog.find(item => item.id == id)

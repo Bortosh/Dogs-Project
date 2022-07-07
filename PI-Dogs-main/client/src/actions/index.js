@@ -15,9 +15,10 @@ export const DELETE_DOG = 'DELETE_DOG'
 export function getDogs() {
     return async function(dispatch) {
         const json = await axios ('http://localhost:3001/dogs')
+        const data = json.data
         return dispatch({
             type: GET_DOGS,
-            payload: json.data
+            payload: data
         })
     }
 }
