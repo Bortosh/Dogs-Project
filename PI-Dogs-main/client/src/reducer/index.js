@@ -72,7 +72,7 @@ function rootReducer(state = initialState, action) {
                 // console.log('esto es filtrado de temper', action.payload)
                 return {
                     ...state,
-                    dogFiltered: filterTemper
+                    dogs: filterTemper
                 }
             case DELETE_DOG:
                 return {
